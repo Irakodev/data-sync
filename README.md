@@ -1,17 +1,18 @@
 # Data Sync
 
-Python automation that fetches data from an API and saves it locally with exponential backoff retry logic.
+Resilient API sync with retry logic · exponential backoff · auto-recovery
 
 ## Stack
 - Python
 - Requests
+- REST API
 - python-dotenv
 
 ## How it works
-1. Fetches data from a REST API
-2. If the request fails, retries up to 3 times
-3. Wait time doubles on each retry: 1s → 2s → 4s
-4. Saves the response as a JSON file locally
+1. Fetches data from a REST API endpoint
+2. On failure, retries up to 3 times automatically
+3. Wait time doubles on each retry: 1s → 2s → 4s (exponential backoff)
+4. Persists response as JSON · logs every sync attempt
 
 ## How to run
 1. Clone the repository
@@ -20,4 +21,5 @@ Python automation that fetches data from an API and saves it locally with expone
 
 ## Demo
 
-![Terminal Output](assets/demo.png)
+![Data Sync Demo](assets/demo.png)
+![Automation Pipeline](assets/demo_2.png)
